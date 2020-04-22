@@ -20,7 +20,18 @@
 			$("select option").eq(3).prop("selected",true);
 			break;
 		}
-		
+		$(function(){
+			$("form").submit(function() {
+				if($("input[name='name']").val()==""||$("input[name='content']").val()==""||$("input[name='startDate']").val()==""||$("input[name='endDate']").val()==""||$("select option:selected").val()=="") {
+					alert("폼을 다 채워주세요");
+					return false;
+				}
+				if($("input[name='name']").val().length>30) {
+					alert("프로젝트 제목은 30자를 초과할 수 없습니다");
+					return false;
+				}
+			})
+		})	
 	})
 </script>
 <div class="container">

@@ -22,11 +22,11 @@ public class ProjectDaoTest {
 	@Autowired
 	private ProjectDao dao;
 	@Test
-	public void test00() throws SQLException {
+	public void test00dao() throws SQLException {
 		System.out.println(dao);
 	}
 	@Test
-	public void test01() throws SQLException {
+	public void test01insert() throws SQLException {
 		Calendar cal = GregorianCalendar.getInstance();	
 		cal.set(2020, 1, 1);
 		Calendar cal2 = GregorianCalendar.getInstance();
@@ -35,15 +35,15 @@ public class ProjectDaoTest {
 		dao.insertProject(project);
 	}
 	@Test
-	public void test02() throws SQLException {
+	public void test02list() throws SQLException {
 		dao.showProjects();
 	}
 	@Test
-	public void test03() throws SQLException {
+	public void test03selectByNo() throws SQLException {
 		dao.showProjectByNo(new ProjectVO(1));
 	}
 	@Test
-	public void test04() throws SQLException {
+	public void test04Update() throws SQLException {
 		Calendar cal = GregorianCalendar.getInstance();	
 		cal.set(2020, 2, 1);
 		Calendar cal2 = GregorianCalendar.getInstance();
@@ -52,7 +52,7 @@ public class ProjectDaoTest {
 		dao.updateProject(project);
 	}
 	@Test
-	public void test05() throws SQLException {
+	public void test05Delete() throws SQLException {
 		dao.deleteProject(new ProjectVO(1));
 	}
 	
